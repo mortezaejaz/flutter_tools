@@ -1,25 +1,10 @@
-import 'package:get/get.dart';
-
 class ValidatorHelper {
 
-  static String? validMobile(String value) {
-    if(!GetUtils.isPhoneNumber(value)) {
-      return 'شماره موبایل معتبر وارد کنید';
-    }
-    return null;
-  }
 
   static String? validPhoneNumber(String value) {
     final regexPhoneNumber = RegExp(r'^0[0-9]{2,}[0-9]{7,}$');
     if(!regexPhoneNumber.hasMatch(value)) {
       return 'شماره تلفن معتبر وارد کنید';
-    }
-    return null;
-  }
-
-  static String? requireValid(String value) {
-    if(value.isEmpty) {
-      return 'لطفا فیلد مربوطه را تکمیل کنید';
     }
     return null;
   }
